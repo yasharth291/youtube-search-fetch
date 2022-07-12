@@ -1,0 +1,27 @@
+{
+  "name": "fampay-hiring-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm start server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasharth291/Fampay-hiring-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yasharth291/Fampay-hiring-backend/issues"
+  },
+  "homepage": "https://github.com/yasharth291/Fampay-hiring-backend#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^5.11.17",
+    "node-cron": "^3.0.1",
+    "uuid": "^8.3.2"
+  }
+}
