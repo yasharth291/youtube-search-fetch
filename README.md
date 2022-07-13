@@ -69,9 +69,9 @@ docker run -p 49160:8080 -d <your username>/node-web-app
 
 ### Some Screenshots of Queries 
 
-[image][https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20180745.jpg] 
+[image](https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20180745.jpg)
 
 here we are searching Throw Cricket with one page of data which is 10 entries
 
-[image2][https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20181115.jpg]
+[image2](https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20181115.jpg)
 this is how the data is stored here
