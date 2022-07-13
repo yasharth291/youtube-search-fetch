@@ -4,7 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "npm start server.js"
+    "test": "npm start server.js",
+    "format": "prettier --write \"**/*.{js,json}\""
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "express": "^4.18.1",
     "mongoose": "^5.11.17",
     "node-cron": "^3.0.1",
+    "prettier": "^2.7.1",
     "uuid": "^8.3.2"
   }
 }
