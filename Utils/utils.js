@@ -75,9 +75,11 @@ const FindTheData = async (newArr) => {
     li.push(li_1);
     li.push(li_2);
   }
-  var newData = await video.find({
-    $or: li,
-  });
+  var newData = await video
+    .find({
+      $or: li,
+    })
+    .sort({ video_publishedDateTime: 1 });
 
   return newData;
 };
