@@ -57,7 +57,7 @@ async function ChangeStringToArray(que) {
   return newArr;
 }
 
-const FindTheData = async (newArr) => {
+const FindTheData = async (newArr, page) => {
   var li = [];
   for (var i = 0; i < newArr.length; i++) {
     var li_1 = {
@@ -75,12 +75,14 @@ const FindTheData = async (newArr) => {
     li.push(li_1);
     li.push(li_2);
   }
+  page = (page - 1) * 10;
   var newData = await video
     .find({
       $or: li,
     })
+    .skip(page)
+    .limit(10)
     .sort({ video_publishedDateTime: 1 });
-
   return newData;
 };
 
