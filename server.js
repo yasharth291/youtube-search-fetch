@@ -13,7 +13,6 @@ app.use('/api/', require('./Routes/getData'));
 app.use(logger('dev'));
 app.listen(PORT, () =>
   cron.schedule('*/30 * * * *', () => {
-    console.log('hitting');
-    // Downloader.Downloader();
+    Downloader.Download();
   })
 );

@@ -1,16 +1,42 @@
 const axios = require('axios').default;
 const Video = require('../Models/Videos.js');
 const video = require('../Models/Videos');
+const logger = require('./logger');
 
-Downloader = async () => {
-  console.log('*');
+Download = async () => {
+  try {
+    let done = false;
+    for (const apiKey of process.env['API_KEY'].split(',')) {
+      try {
+        if (done) {
+          break;
+        }
+        await Downloader(apiKey);
+        done = true;
+      } catch (err) {
+        logger.error('Error saving videos to DB', {
+          error: err,
+        });
+      }
+    }
+    if (!done) {
+      throw new Error('Quota exhausted for all keys');
+    }
+  } catch (err) {
+    /* Handle the error */
+    logger.error('Quota exhausted for all keys', {
+      error: err,
+    });
+  }
+};
+Downloader = async (api_key) => {
   var current_time = new Date();
   current_time.setMinutes(current_time.getMinutes() - 30);
   var last_hit_time = current_time;
   axios
     .get('https://youtube.googleapis.com/youtube/v3/search', {
       params: {
-        key: process.env['API_KEY'],
+        key: api_key,
         q: process.env['SEARCH_TITLE'],
         part: 'snippet',
         order: 'date',
@@ -41,13 +67,19 @@ Downloader = async () => {
             channel_title,
             created_time,
           });
-          await videos.save();
+          try {
+            await videos.save();
+          } catch (err) {
+            logger.error('Duplicate', {
+              error: err,
+            });
+          }
           i++;
         }
       }
     })
     .catch(function (error) {
-      console.log(error);
+      logger.error('Cant hit the API', { error: error });
     });
 };
 
@@ -90,4 +122,5 @@ module.exports = {
   Downloader,
   ChangeStringToArray,
   FindTheData,
+  Download,
 };
