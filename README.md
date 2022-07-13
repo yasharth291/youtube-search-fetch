@@ -37,7 +37,7 @@ API_KEY =<API_KEY1>,<API_KEY2>...
 
 `npm start`
 
-### Running with Docker Compose
+### Running with Docker 
 
 When using Docker, 
 
@@ -65,18 +65,13 @@ docker run -p 49160:8080 -d <your username>/node-web-app
 1. The search done in this project is NOT done with use of plugin.
 2. Logging is added to keep a log of errors
 3. MongoDb is used as the backend 
-### Contributing
-
-Found a bug/want to request a feature? Thanks! Just follow the steps below:
-
-1. File an issue with appropriate tags
-2. Fork this repo
-3. Make changes to a feature branch
-`git checkout -b <issue-#>`
-4. Once done, run `npm run commit`
-5. Make sure you `sync up` the branch with the upstream master
-6. Raise a PR for review
+4. Multiple Key support is added
 
 ### Some Screenshots of Queries 
 
-[image][]
+[image][https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20180745.jpg] 
+
+here we are searching Throw Cricket with one page of data which is 10 entries
+
+[image2][https://github.com/yasharth291/Fampay-hiring-backend/blob/main/Screenshots/Screenshot%202022-07-13%20181115.jpg]
+this is how the data is stored here
