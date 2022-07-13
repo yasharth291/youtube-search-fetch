@@ -13,7 +13,6 @@ const connectToDatabase = async () => {
                 useNewUrlParser: true
             }
         )
-        console.log("MongoDB is connected");
     } catch(error){
    
 console.log(error);
